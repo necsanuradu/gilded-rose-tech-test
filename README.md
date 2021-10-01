@@ -1,3 +1,9 @@
+# printScreen
+
+![Image 01-10-2021 at 16 11](https://user-images.githubusercontent.com/71831322/135645568-d0385597-1c1f-4c49-ba96-79646f4180df.jpeg)
+
+![Image 01-10-2021 at 16 18](https://user-images.githubusercontent.com/71831322/135645605-30ac2691-50f5-4ad9-bdf9-335a2e810f02.jpeg)
+
 # Testing logic
 Since the client's code is working as intended the new function updateQuality () will be tested against the previous version of updateQuality () for a set of items excluding the new featured item (Conjured type) for a long sequence in the days(50) and then tested in both valid, expired environments just for the newly featured item.
 
