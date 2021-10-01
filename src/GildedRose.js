@@ -12,7 +12,9 @@ class Shop {
   }
 
   reduceSellIn(index, item) {
-    this.items[index].sellIn = item.sellIn - 1;
+    if (!item.name.match(new RegExp("^Sulfuras", "i"))) {
+      this.items[index].sellIn = item.sellIn - 1;
+    }
   }
 
   calculateQuality(index, item) {
@@ -36,7 +38,7 @@ class Shop {
 
   getItemParameters(item) {
     let itemParameters;
-    for (let param of parameters) {
+    for (let param of ItemMatcher.parameters()) {
       itemParameters = param;
       if (item.name.match(new RegExp("^" + param.matcher, "i"))) break;
     }
