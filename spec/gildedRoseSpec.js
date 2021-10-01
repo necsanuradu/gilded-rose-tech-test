@@ -15,6 +15,7 @@ describe("Gilded Rose", function () {
         it(`should fit quality day: ${day}, name: ${item.name}, quality: ${item.quality}`, () => {
           expect(expectedQuality).toEqual(quality[day]);
         });
+        console.log(`${item.name}, ${item.sellIn}, ${item.quality}`);
       });
       giltedRoseNewFeature.updateQuality();
     }
@@ -25,6 +26,7 @@ describe("Gilded Rose", function () {
       it(`should fit quality day: ${day}, name: ${item.name}`, function () {
         expect(item.quality).toEqual(itemsWorkingOld[index].quality);
       });
+      console.log(`${item.name}, ${item.sellIn}, ${item.quality}`);
     });
     gildedRose.updateQuality();
     gildedRoseWorkingOld.updateQuality();
