@@ -8,15 +8,6 @@ describe("Gilded Rose", function () {
   gildedRoseWorkingOld = new ShopWorkingOld(itemsWorkingOld);
   giltedRoseNewFeature = new Shop(itemsNewFeature);
 
-  for (let day = 0; day < 50; day++) {
-    items.forEach((item, index) => {
-      it(`should fit quality day: ${day}, name: ${item.name}`, function () {
-        expect(item.quality).toEqual(itemsWorkingOld[index].quality);
-      });
-    });
-    gildedRose.updateQuality();
-    gildedRoseWorkingOld.updateQuality();
-  }
   describe("new feature", () => {
     for (let day = 0; day < 8; day++) {
       itemsNewFeature.forEach((item, index) => {
@@ -28,4 +19,14 @@ describe("Gilded Rose", function () {
       giltedRoseNewFeature.updateQuality();
     }
   });
+
+  for (let day = 0; day < 50; day++) {
+    items.forEach((item, index) => {
+      it(`should fit quality day: ${day}, name: ${item.name}`, function () {
+        expect(item.quality).toEqual(itemsWorkingOld[index].quality);
+      });
+    });
+    gildedRose.updateQuality();
+    gildedRoseWorkingOld.updateQuality();
+  }
 });

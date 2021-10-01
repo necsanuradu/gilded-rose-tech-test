@@ -20,20 +20,20 @@ class Shop {
   calculateQuality(index, item) {
     let p = this.getItemParameters(this.items[index]);
     if (item.sellIn >= 0)
-      this.items[index].quality = item.quality + this.returnValidPase(p, item);
+      this.items[index].quality = item.quality + this.returnValidphase(p, item);
     else
       this.items[index].quality =
-        item.quality * p.expiredMultiplier + p.expireQualityPase;
+        item.quality * p.expiredMultiplier + p.expireQualityphase;
   }
 
-  returnValidPase(p, item) {
-    p = p.dayToDayQualityPase.filter((dayPase) => {
-      return dayPase.startDay >= item.sellIn && dayPase.endDay <= item.sellIn
+  returnValidphase(p, item) {
+    p = p.dayToDayQualityphase.filter((dayphase) => {
+      return dayphase.startDay >= item.sellIn && dayphase.endDay <= item.sellIn
         ? true
         : false;
     });
-    p.unshift({ pase: 1 });
-    return p[p.length - 1].pase;
+    p.unshift({ phase: 1 });
+    return p[p.length - 1].phase;
   }
 
   getItemParameters(item) {
